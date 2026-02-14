@@ -1,0 +1,24 @@
+    Checking zed-databricks v0.0.1 (C:\Users\eduard\Projects\zed-databricks)
+error[E0053]: method `run_slash_command` has an incompatible type for trait
+  --> src\lib.rs:12:18
+   |
+12 |         command: &zed::SlashCommand,
+   |                  ^^^^^^^^^^^^^^^^^^ expected `SlashCommand`, found `&SlashCommand`
+   |
+   = note: expected signature `fn(&DatabricksExtension, SlashCommand, Vec<std::string::String>, Option<&Worktree>) -> Result<_, _>`
+              found signature `fn(&DatabricksExtension, &SlashCommand, &[std::string::String], Option<&Worktree>) -> Result<_, _>`
+help: change the parameter type to match the trait
+   |
+12 -         command: &zed::SlashCommand,
+12 +         command: SlashCommand,
+   |
+
+error[E0277]: the trait bound `SlashCommandOutput: Default` is not satisfied
+  --> src\lib.rs:27:31
+   |
+27 | ...                   ..Default::default()
+   |                         ^^^^^^^^^^^^^^^^^^ the trait `Default` is not implemented for `SlashCommandOutput`
+
+Some errors have detailed explanations: E0053, E0277.
+For more information about an error, try `rustc --explain E0053`.
+error: could not compile `zed-databricks` (lib) due to 2 previous errors
