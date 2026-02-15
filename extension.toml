@@ -6,8 +6,10 @@ authors = ["Eduard <eduard@example.com>"]
 description = "Seamlessly bridge Zed with Databricks"
 repository = "https://github.com/eduard-lt/zed-databricks"
 
-[[slash_commands]]
-name = "databricks"
+[slash_commands.databricks]
 description = "Interact with Databricks"
 tooltip_text = "Databricks Commands"
-requires_argument = true
+requires_argument = false
+
+[schema]
+databricks = { type = "object", properties = { host = { type = "string", description = "Databricks Host URL" }, token = { type = "string", description = "Databricks Access Token" } } }

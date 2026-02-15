@@ -320,6 +320,7 @@ dependencies = [
 name = "zed-databricks"
 version = "0.0.1"
 dependencies = [
+ "serde",
  "zed_extension_api",
 ]
 

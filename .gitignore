@@ -1,1 +1,5 @@
 /target
+/vendor
+/extension.wasm
+build_err.txt
+*.ipynb
